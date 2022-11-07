@@ -1,0 +1,30 @@
+html, body {
+  
+  height: 100%; 
+  width: 100%;
+  width: 565px; 
+  font-family: Helvetica;
+  color: lightgreen;
+  background-color: green;
+  
+}
+
+p
+{
+  color: limegreen ;
+  text-align: center;
+  font-family: Impact;  
+}
+h1
+{
+  background-color: darkgreen;
+  padding: 10px;
+  text-align: center; 
+  border: 1px lime solid;
+  border-radius: 9px;
+}
+li:hover
+{
+ color: white;
+ whidth: 120px; 
+}
