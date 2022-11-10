@@ -2,29 +2,42 @@ html, body {
   
   height: 100%; 
   width: 100%;
-  width: 565px; 
-  font-family: Helvetica;
+  width: 50%; 
+  font-family: futura;
   color: lightgreen;
   background-color: green;
-  
+  margin-left: 25%;
 }
 
 p
 {
   color: limegreen ;
+  
   text-align: center;
-  font-family: Impact;  
+  font-family: script;  
+  
 }
 h1
 {
   background-color: darkgreen;
+  font-family: script;
   padding: 10px;
   text-align: center; 
   border: 1px lime solid;
   border-radius: 9px;
+  
 }
 li:hover
 {
+ font-family: Arial; 
  color: white;
  whidth: 120px; 
+}
+
+footer
+{
+  background-color: whitesmoke;
+  text-shadow: 2px;
+  border: 1px #4e974e solid;
+  border-radius: 9px;
 }

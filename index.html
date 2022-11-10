@@ -9,27 +9,205 @@
 </head>
 
 <body>
-  <h1>Basic page </h1>
-   <p> web dev </p>
- <p>===============</p> 
-<h1>Dev ess</h1>
- <h3>Trainer</h3>
-  
-	<p>Xander</p>
-  
-  <h3>Deelnemers</h3>
-	<ul>
-	 <li>name</li>
-	 <li>name</li>
-	 <li>name</li>		
-	</ul>
-	<ol type="i" start="5">
-	 <li>new name</li>
-	 <li>new name</li>
-	</ol>
-  
-  <script src="script.js"></script>
+<div>
+  <h1>Basic Linux commands</h1>
+   <p> A Linux command is a program or utility that runs on the CLI – a console that interacts with the system via texts and processes. It’s similar to the Command Prompt application in Windows.
 
+Linux commands are executed on Terminal by pressing Enter at the end of the line. You can run commands to perform various tasks, from package installation to user management and file manipulation.
+
+Here’s what a Linux command’s general syntax looks like:
+
+CommandName [option(s)] [parameter(s)]
+
+A command may contain an option or a parameter. In some cases, it can still run without them. These are the three most common parts of a command:
+
+CommandName is the rule that you want to perform.
+Option or flag modifies a command’s operation. To invoke it, use hyphens (–) or double hyphens (—).
+Parameter or argument specifies any necessary information for the command.
+Keep in mind that all Linux commands are case-sensitive. </p>
+ <p>===============</p> 
+<h1>The 13 Most Commonly Used Linux Commands</h1>
+<h3>1. sudo command</h3>
+
+<p>Short for superuser do, sudo is one of the most popular basic Linux commands that lets you perform tasks that require administrative or root permissions.</p>
+
+<p>When using sudo, the system will prompt users to authenticate themselves with a password. Then, the Linux system will log a timestamp as a tracker. By default, every root user can run sudo commands for 15 minutes/session.</p>
+
+<p>If you try to run sudo in the command line without authenticating yourself, the system will log the activity as a security event.</p>
+
+<p>Here’s the general syntax:</p>
+
+<p> (command)</p>  
+
+<p>You can also add an option, such as:</p>
+
+<p>-k or –reset-timestamp invalidates the timestamp file.</p>
+<p>-g or –group=group runs commands as a specified group name or ID.</p>
+<p>-h or –host=host runs commands on the host.</p>
+  
+<h3>2. pwd command</h3>
+Use the pwd command to find the path of your current working directory. Simply entering pwd will return the full current path – a path of all the directories that starts with a forward slash (/). For example, /home/username.
+
+The pwd command uses the following syntax:
+
+pwd [option]
+
+It has two acceptable options:
+
+-L or –logical prints environment variable content, including symbolic links.
+-P or –physical prints the actual path of the current directory.
+<h3>3. cd command</h3>
+To navigate through the Linux files and directories, use the cd command. Depending on your current working directory, it requires either the full path or the directory name.
+
+Running this command without an option will take you to the home folder. Keep in mind that only users with sudo privileges can execute it.
+
+Let’s say you’re in /home/username/Documents and want to go to Photos, a subdirectory of Documents. To do so, enter the following command:
+
+<p>cd Photos.</p>
+
+If you want to switch to a completely new directory, for example, /home/username/Movies, you have to enter cd followed by the directory’s absolute path:
+
+<p>cd /home/username/Movies</p>
+
+Here are some shortcuts to help you navigate:
+
+cd ~[username] goes to another user’s home directory.
+cd .. moves one directory up.
+cd- moves to your previous directory.
+<h3>4. ls command</h3>
+The ls command lists files and directories within a system. Running it without a flag or parameter will show the current working directory’s content.
+
+To see other directories’ content, type ls followed by the desired path. For example, to view files in the Documents folder, enter:
+
+<p>ls /home/username/Documents</p>
+
+Here are some options you can use with the ls command:
+
+ls -R lists all the files in the subdirectories.
+ls -a shows hidden files in addition to the visible ones.
+ls -lh shows the file sizes in easily readable formats, such as MB, GB, and TB.
+5. cat command
+Concatenate, or cat, is one of the most frequently used Linux commands. It lists, combines, and writes file content to the standard output. To run the cat command, type cat followed by the file name and its extension. For instance:
+
+<p>cat filename.txt.</p>
+
+Here are other ways to use the cat command:
+
+cat > filename.txt creates a new file.
+<p>cat filename1.txt filename2.txt > filename3.txt</p> merges filename1.txt and filename2.txt and stores the output in filename3.txt.
+<p>tac filename.txt </p>displays content in reverse order.
+<h3>6. cp command</h3>
+Use the cp command to copy files or directories and their content. Take a look at the following use cases.
+
+To copy one file from the current directory to another, enter cp followed by the file name and the destination directory. For example:
+
+<p>cp filename.txt /home/username/Documents</p>
+
+To copy files to a directory, enter the file names followed by the destination directory:
+
+<p>cp filename1.txt filename2.txt filename3.txt /home/username/Documents</p>
+
+To copy the content of a file to a new file in the same directory, enter cp followed by the source file and the destination file:
+
+<p>cp filename1.txt filename2.txt</p>
+
+To copy an entire directory, pass the -R flag before typing the source directory, followed by the destination directory:
+
+<p> cp -R /home/username/Documents /home/username/Documents_backup</p>
+
+<h3>7. mv command</h3>
+The primary use of the mv command is to move and rename files and directories. Additionally, it doesn’t produce an output upon execution.
+
+Simply type mv followed by the filename and the destination directory. For example, you want to move filename.txt to the /home/username/Documents directory:
+
+<p>mv filename.txt /home/username/Documents.</p>
+
+You can also use the mv command to rename a file:
+
+<p>mv old_filename.txt new_filename.txt</p>
+
+<h3>8. mkdir command</h3>
+Use the mkdir command to create one or multiple directories at once and set permissions for each of them. The user executing this command must have the privilege to make a new folder in the parent directory, or they may receive a permission denied error.
+
+Here’s the basic syntax:
+
+<p>mkdir [option] directory_name</p>
+
+For example, you want to create a directory called Music:
+
+<p>mkdir Music</p>
+
+To make a new directory called Songs inside Music, use this command:
+
+<p>mkdir Music/Songs</p>
+
+The mkdir command accepts many options, such as:
+
+-p or –parents create a directory between two existing folders. For example, mkdir -p Music/2020/Songs will make the new “2020” directory.
+-m sets the file permissions. For instance, to create a directory with full read, write, and execute permissions for all users, enter mkdir -m777 directory_name.
+-v prints a message for each created directory.
+<h3>9. rmdir command</h3>
+To permanently delete an empty directory, use the rmdir command. Remember that the user running this command should have sudo privileges in the parent directory.
+
+For example, you want to remove an empty subdirectory named personal1 and its main folder mydir:
+
+<p>rmdir -p mydir/personal1</p>
+
+<h3>10. rm command</h3>
+The rm command is used to delete files within a directory. Make sure that the user performing this command has write permissions.
+
+Remember the directory’s location as this will remove the file(s) and you can’t undo it.
+
+Here’s the general syntax:
+
+<p>rm filename</p>
+
+To remove multiple files, enter the following command:
+
+<p>rm filename1 filename2 filename3</p>
+
+Here are some acceptable options you can add:
+
+-i prompts system confirmation before deleting a file.
+-f allows the system to remove without a confirmation.
+-r deletes files and directories recursively.
+
+<h3>11. touch command</h3>
+The touch command allows you to create an empty file or generate and modify a timestamp in the Linux command line.
+
+For example, enter the following command to create an HTML file named Web in the Documents directory:
+
+<p>touch /home/username/Documents/Web.html</p>
+
+<h3>12. locate command</h3>
+The locate command can find a file in the database system.
+
+Moreover, adding the -i argument will turn off case sensitivity, so you can search for a file even if you don’t remember its exact name.
+
+To look for content that contains two or more words, use an asterisk (*). For example:
+
+<p>locate -i school*not</p>
+
+The command will search for files that contain the words school and note, whether they use uppercase or lowercase letters.
+
+<h3>13. find command</h3>
+Use the find command to search for files within a specific directory and perform subsequent operations. Here’s the general syntax:
+
+<p>find [option] [path] [expression]</p>
+
+For example, you want to look for a file called notes.txt within the home directory and its subfolders:
+
+<p>find /home -name notes.txt</p>
+
+Here are other variations when using find:
+
+<p>find -name filename.txt</p> to find files in the current directory.
+<p>find ./ -type d -name directoryname to look for directories.</p>
+<br />
+<script src="script.js"></script>
+<footer> 
+<p>Copyright &copy; 2022 Basic web dev. </p>
+</footer>
 
 </body>
 
